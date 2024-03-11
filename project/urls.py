@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ml.views import predection
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', predection)
 ]
