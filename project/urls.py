@@ -23,5 +23,5 @@ from ml.api import IrisAPI
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', predection),
-    path('api/', IrisAPI)
+    path('api/', IrisAPI.as_view())
 ]
