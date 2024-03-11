@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Iris
+from .form import IrisForm
+
+def predection(request):
+    form = IrisForm()
+    return render(request , 'iris.html',{'form':form})
+
