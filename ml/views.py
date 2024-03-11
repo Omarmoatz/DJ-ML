@@ -14,13 +14,13 @@ def predection(request):
             petal_length = form.cleaned_data['petal_length']
             petal_width = form.cleaned_data['petal_width']
 
-            model = pd.read_pickle('model')  # Load the trained model
+            model = pd.read_pickle('model.pickle')  # Load the trained model
             result = model.predict([['sepal_length','sepal_width','petal_length','petal_width']])
 
-            predect = result[0]
-            my_form.species = predect
+            predict = result[0]
+            my_form.species = predict
             my_form.save()
-            return render(request , 'iris.html',{'form':form,'predect':predect})
+            return render(request , 'iris.html',{'form':form,'predect':predict})
     else:
         form = IrisForm()
     return render(request , 'iris.html',{'form':form})

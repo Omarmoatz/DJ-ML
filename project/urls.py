@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path
 
 from ml.views import predection
+from ml.api import IrisAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', predection)
+    path('', predection),
+    path('api/', IrisAPI)
 ]
