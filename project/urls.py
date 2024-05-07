@@ -19,9 +19,12 @@ from django.urls import path
 
 from ml.views import predection
 from ml.api import IrisAPI
+# from ai.api import recommend_recipes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', predection),
-    path('api/', IrisAPI.as_view())
+    path('api/', IrisAPI.as_view()),
+
+    # path('recipe/', recommend_recipes)
 ]

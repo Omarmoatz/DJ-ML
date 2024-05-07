@@ -15,9 +15,9 @@ def predection(request):
             petal_length = form.cleaned_data['petal_length']
             petal_width = form.cleaned_data['petal_width']
 
-            model = load('model.joblib')
+            model = pd.read_pickle('model.pickle')
             # model = pd.read_pickle('model.joblib')  # Load the trained model
-            result = model.predict([['sepal_length','sepal_width','petal_length','petal_width']])
+            result = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])
             predict = result[0]
             
             my_form.species = predict
