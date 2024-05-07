@@ -15,8 +15,9 @@
 </head>
   <body>
     <div class="container my-5">
+        <h1 class="mb-5 mx-auto bg-success-subtle w-25 ps-4 py-2">Iris Prediction</h1>
         <div class="row">
-            <h1 class="mb-5 text-center">Add a new flower</h1>
+            
             <div class="col-lg-6 mt-5">
                 {% if predect %}
                     <div class="col-6 border rounded p-3 text-center w-100 mt-3 alert alert-success">
@@ -29,7 +30,7 @@
                 
                     {% bootstrap_form form %}
                 
-                    <button type="submit" class="btn btn-primary w-100">Predict</button>
+                    <button type="submit" class="btn btn-success w-100">Predict</button>
                 </form>
    
             </div>
