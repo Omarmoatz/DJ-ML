@@ -1,3 +1,4 @@
+{% load static %}
 {% load django_bootstrap5 %}
 <!doctype html>
 <html lang="en">
@@ -15,22 +16,27 @@
   <body>
     <div class="container my-5">
         <div class="row">
-            <div class="col-6 mx-auto my-5">
-                <h1 class="mb-5 text-center">Add a new flower</h1><br/>
+            <h1 class="mb-5 text-center">Add a new flower</h1>
+            <div class="col-lg-6 mt-5">
+                {% if predect %}
+                    <div class="col-6 border rounded p-3 text-center w-100 mt-3 alert alert-success">
+                        <p class="lead">The predicted species is {{predect}}</p>
+                    </div>    
+                {% endif %}
+
                 <form method="post" class="border rounded p-4 bg-light">
                     {% csrf_token %}
                 
                     {% bootstrap_form form %}
                 
-                    {% bootstrap_button button_type="submit" content="Predict" %}
+                    <button type="submit" class="btn btn-primary w-100">Predict</button>
                 </form>
+   
             </div>
-
-            {% if predect %}
-            <div class="col-6 border rounded p-3 text-center">
-                <p class="lead">The predicted species is {{predect}} with a probability of {{prediction_probability}}%</p>
-            </div>   
-            {% endif %}
+            
+            <div class="col-lg-6 ">
+                <img src="{% static 'img/iris.png' %}" class="img-fluid" alt="img">
+            </div> 
 
         </div>
     </div>
